@@ -123,7 +123,7 @@ public class IDTokenParserDemo {
             // get JWTVerifier
             Algorithm algorithm = Algorithm.RSA256(rsaPublicKeyByKid, null);
             JWTVerifier verifier = JWT.require(algorithm).build();
-            JSONObject jsonObject = JSONObject.parseObject(new String(Base64.decodeBase64(decodedJwt.getPayload())));
+            JSONObject jsonObject = JSONObject.parseObject(new String(Base64.decodeBase64(decodedJwt.getPayload()), StandardCharsets.UTF_8));
 
             // verify signature and validity period
             // If the signature is incorrect, an JWTVerificationException will be thrown
@@ -206,7 +206,8 @@ public class IDTokenParserDemo {
         CloseableHttpClient httpClient = HttpClientUtil.getClient();
 
         try {
-            CloseableHttpResponse response = httpClient.execute(httpGet);
+            CloseableHttpClient client = HttpClientUtil.getClient();
+            CloseableHttpResponse response = client.execute(httpGet);
             HttpEntity entity = response.getEntity();
 
             String result = EntityUtils.toString(entity, DEFAULT_CHARSET);

@@ -21,6 +21,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
@@ -73,7 +74,8 @@ public class AtParserDemo {
         request.add(new BasicNameValuePair("open_id", openId));
         httpPost.setEntity(new UrlEncodedFormEntity(request));
 
-        try (CloseableHttpResponse response = HttpClientUtil.getClient().execute(httpPost)) {
+        try (CloseableHttpClient client = HttpClientUtil.getClient();
+             CloseableHttpResponse response = client.execute(httpPost)) {
             HttpEntity responseEntity = response.getEntity();
 
             // access_token and id_token are base64 encoded and may have escaping characters, such as: \/
