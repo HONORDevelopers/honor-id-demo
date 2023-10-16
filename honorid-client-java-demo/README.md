@@ -1,71 +1,65 @@
-# HONOR ID Android Java Sample Code
+# Honor Account Android Java Sample Code
 
-[中文](README_ZH.md) | English
+[中文](README.md)|English
 
+## Directory
 
+[TOC]
 
-## Contents
+## Brief introduction
 
-* [Introduction](#Introduction)
-* [Environment](#Environment)
-* [Preparations](#Preparations)
-* [Result](#Result)
-* [License](#License)
+[JDK](https://www.oracle.com/java/technologies/javase-downloads.html)  1.8 and above
 
+-Install [Android Studio]( https://developer.android.com/studio)3.6.1 and above
 
+-MinSdkVersion 19 and above
 
-## Introduction
+-TargetSdkVersion 31 (recommended)
 
-Honor ID Java sample code provides an example which wrap the interface of the HonorID SDK.  Implement the interfaces of silent sign in, authorized login, cancel authorization, authorization page.
+-CompileSdkVersion 31 (recommended)
 
+-Gradle 5.4.1 and above (recommended)
 
+-Equipment for testing applications: MagicUI 4.0 and above Honor phones.
 
-## Environment
+-Honor account APK 6.0.2.300 and above
 
-- [JDK](https://www.oracle.com/java/technologies/javase-downloads.html) 1.8 or later
-- [Android Studio](https://developer.android.com/studio) 3.6.1 or later
-  - minSdkVersion 19 or later
-  - targetSdkVersion 31（recommend）
-  - compileSdkVersion 31（recommend）
-  - Gradle 5.4.1 or later（recommend）
-- Devices for test：MagicUI 4.0 or later HONOR mobile phone
-- HONOR ID APK 6.0.2.300 or later
+## Development preparation
 
+1. Open the sample code project in Android Studio and run the test application on the device or emulator where you have installed the latest version of the Honor Account APP.
 
+2. Register for [Honor Developer Account](https://developer.hihonor.com/cn/ ).
 
-## Preparations
+3. Create an Android application. For details, please refer to [Development Preparation | Applying for Android Applications](https://developer.hihonor.com/cn/kitdoc?category=base&kitId=11001&navigation=guides&docId=android-apply-application.md).
 
-1. Open the sample code project in Android Studio and run the demo application on the device or emulator where you have the latest version of the Honor ID APP installed.
-2. Register [HONOR Developers](https://developer.hihonor.com/cn/) Account
-3. Create Android App ID. See [Development Preparation|Apply Android Application](https://developer.hihonor.com/cn/kitdoc?category=base&kitId=11001&navigation=guides&docId=android-apply-application.md) for details
-4. Import the demo into Android Studio (3.6.1 or later) before constructing the sample demo
-5. Configure the demo:
-   （1）Replace the "ApplicationID" in the "build.gradle" file in the example project with your own application package name.
-   （2）Replace the mClientID parameter in the example project with your AppID.
+Before building this sample demo, please import it into Android Studio (version 3.6.1 and above).
+
+5. Configuration example code:
+
+(1) Replace the "applicationid" in the "build. gradle" file in the example project with your own application package name.
+
+(2) Replace the mClientID parameter in the sample project with your AppID.
+
 6. Run your application on an Android device or emulator.
 
+## Running results
 
+The example demo page is shown below:
 
-## Result
+<img src="images/honoriddemo.png" alt="account sample result" style="zoom: 80%;" />
 
-The example demo page is shown as follows:
+1. Silent login.
 
-<img src="E:/HonorIDDemo/images/honoriddemo.png" alt="account sample result" style="zoom: 80%;" />
+When the application calls the silent login interface again and returns error 31 (not logged in) or error 55 (scopes not authorize), the authorization page interface is called and the authorization page is pulled up; After the user logs in and authorizes, they can obtain the authorization code. Calling silent login again can return the user's authorization code, openId, unionId, and ID Token, where ID Token can be used for ID Token mode login.
 
-The demo provides the following usage scenario：
+![image-20220912203820818](images/silentsignin.png)
 
-1. Silent Sign In
+2. Authorization page, authorization code mode, front display login.
 
-   If error code 31(not logged in) or error code 55(scopes not authorize) returns, when application call Silent SignIn interface,  then call Intent SignIn to pull pu authorization page. After user login and authorization, application can obtain the user's authorization code. Called Silent SignIn interface again, application can obtain user's authorization code, openId, unionId and ID Token. The ID Token can be used for ID Token Pattern Sign In.
+3. Cancel authorization.
 
-![image-20220912203820818](E:/HonorIDDemo/images/silentsignin.png)
+4. Add authorization.
 
-2. Authorization Page, Authorization Pattern Sign In, Intent Sign In
-3. Cancel Authorization
-4. Add Authorization
+## Authorization License
 
-
-
-## License
-
-The Honor ID SDK demo code is licensed under [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+Authorized License Honor Account Service Android Sample Code Passed through [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0 )Authorization License.
