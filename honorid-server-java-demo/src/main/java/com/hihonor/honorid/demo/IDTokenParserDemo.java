@@ -206,7 +206,8 @@ public class IDTokenParserDemo {
         CloseableHttpClient httpClient = HttpClientUtil.getClient();
 
         try {
-            CloseableHttpResponse response = httpClient.execute(httpGet);
+            CloseableHttpClient client = HttpClientUtil.getClient();
+            CloseableHttpResponse response = client.execute(httpGet);
             HttpEntity entity = response.getEntity();
 
             String result = EntityUtils.toString(entity, DEFAULT_CHARSET);
