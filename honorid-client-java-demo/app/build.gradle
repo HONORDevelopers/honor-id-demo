@@ -1,18 +1,13 @@
 plugins {
     id 'com.android.application'
 }
-//获取签名配置
-def signProperties = rootProject.file("keystore.properties")//配置文件路径
-def props = new Properties()
-props.load(new FileInputStream(signProperties))
-def file = file(props['storeFile'])//jks秘钥库文件
 
 android {
     compileSdkVersion 33
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.hihonor.demo"
+        applicationId "com.hihonor.iddemo"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 1
@@ -25,33 +20,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    signingConfigs {
-        release {
-            //为了保护秘钥信息的安全，这些信息不该以明文放到build文件中，下面是利用配置文件进行配置
-            if (file.exists() && signProperties.exists()) {//如果秘钥库文件和配置文件存在就签名，否则不签名
-                keyAlias props['keyAlias']//Properties['key']方法用来获取key对应的属性值，就是properties文件下配置的属性
-                keyPassword props['keyPassword']
-                storeFile file//注意这里要的是file
-                storePassword props['storePassword']
-            }
-        }
-        debug {
-            //为了保护秘钥信息的安全，这些信息不该以明文放到build文件中，下面是利用配置文件进行配置
-            if (file.exists() && signProperties.exists()) {//如果秘钥库文件和配置文件存在就签名，否则不签名
-                keyAlias props['keyAlias']//Properties['key']方法用来获取key对应的属性值，就是properties文件下配置的属性
-                keyPassword props['keyPassword']
-                storeFile file//注意这里要的是file
-                storePassword props['storePassword']
-            }
-        }
-    }
-
-    applicationVariants.all { variant ->
-        variant.outputs.all {
-            def apkName = "Signing_openSdkDemo"
-            outputFileName = apkName + ".apk"
         }
     }
 
