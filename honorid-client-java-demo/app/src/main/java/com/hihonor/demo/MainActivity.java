@@ -13,7 +13,7 @@ Copyright 2021. Honor Device Co.,Ltd. All rights reserved.
    See the License for the specific language governing permissions and
    limitations under the License.
  */
-package com.hihonor.sdkdemo;
+package com.hihonor.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private SignInAccountInfo mAccount;
 
     // replace the mClientID with your AppID which applied on HONOR Developers website
-    private String mClientID = "12345";
+    private String mClientID = "211277808";
 
     private static final String SCOPE_OPENID = "openid";
     private static final String SCOPE_PROFILE = "profile";
@@ -86,6 +86,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    /**
+     * Whether to log in
+     *
+     * @param view
+     */
+    public void isLogin(View view) {
+        boolean login = HonorIdSignInManager.isLogin(this);
+        logPrintlnToMain("isLogin ："+login);
     }
 
     /**
