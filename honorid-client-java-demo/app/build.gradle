@@ -38,4 +38,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    //荣耀账号SDK
+    implementation 'com.hihonor.mcs:honorid-opensdk:8.0.1.351'
 }
