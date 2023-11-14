@@ -4,7 +4,7 @@
 
 [TOC]
 
-## Brief introduction
+## Introduction
 
 ```
 Convenient to understand the authorized login of Honor account, we provide Honor account sample program for your reference or use. Honor account examples include Android Java sample code and server REST sample code, mainly introducing how Honor account performs various authorized login and server interface parsing. Android Java sample code implements silent login, authorized login, cancel login, and incremental authorization functions, The REST example code of the service mainly parses the main methods and parameter transmission and response of the interface.
