@@ -18,6 +18,8 @@ allprojects {
         maven { url "https://maven.aliyun.com/repository/google" }
         maven { url "https://maven.aliyun.com/repository/public" }
         maven { url "https://maven.aliyun.com/repository/jcenter" }
+        //荣耀maven仓库
+        maven { url 'https://developer.hihonor.com/repo'}
     }
 }
 
