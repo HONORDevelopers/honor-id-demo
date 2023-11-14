@@ -1,11 +1,5 @@
 # 荣耀账号示例代码
 
-## 目录
-
-[TOC]
-
-
-
 ## 简介
 
 ```
@@ -16,7 +10,7 @@
 
 ## 接口说明
 
-安卓
+### 安卓端
 
 | Package Name                                                 | Description                                  |
 | ------------------------------------------------------------ | -------------------------------------------- |
@@ -25,7 +19,7 @@
 | [com.hihonor.cloudservice.support.account.request](https://developer.hihonor.com/cn/kitdoc?category=基础服务&kitId=11001&navigation=ref&docId=com.hihonor.cloudservice.support.account.request/SignInOptions.md) | 帐号登录授权服务请求对象                     |
 | [com.hihonor.cloudservice.support.account.result](https://developer.hihonor.com/cn/kitdoc?category=基础服务&kitId=11001&navigation=ref&docId=com.hihonor.cloudservice.support.account.result/SignInAccountInfo.md) | 包含帐号服务的登录类                         |
 
-服务端
+### 服务端
 
 | 类                                         | 实现接口                         | 描述                            |
 | ------------------------------------------ | -------------------------------- | ------------------------------- |
@@ -37,8 +31,6 @@
 | com.hihonor.honorid.demo.Rt2AtDemo         | /oauth2/v3/token                 | Refresh Token 刷新 Access Token |
 
 ## 流程图
-
-
 
 ![image](image/image.webp)
 

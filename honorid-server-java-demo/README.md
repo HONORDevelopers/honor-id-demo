@@ -1,94 +1,82 @@
-# Honor Server REST Sample Code
+# Honor ID Server REST Sample Code
+
+[![Apache-2.0](https://img.shields.io/badge/license-Apache-blue)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Open Source Love](https://img.shields.io/static/v1?label=Open%20Source&message=%E2%9D%A4%EF%B8%8F&color=green)](https://developer.hihonor.com/demos/)
+[![Java Language](https://img.shields.io/badge/language-java-green.svg)](https://www.java.com/en/)
 
 English| [中文](READNE.MD)
 
-[TOC]
 
-## Brief introduction
 
-The REST sample code Honor Account Service has been encapsulated and includes a rich sample program for your reference or direct use. Code2AtDemo code obtains AT, AtParserDemo parses user AT, GetInfoDemo token method obtains user information, GetServerAtDemo server obtains token, IDTokenParserDemo parses token, Rt2AtDemo refreshes token.
+## Contents
 
-## Environmental requirements
+- [Introduction](#Introduction)
+- [Environment](#Environment)
+- [Configuration](#Configuration)
+- [Install](#Install)
+
+- [Sample code](#Sample code)
+- [Technical support](#Technical support)
+- [License](#License)
+
+
+
+## Introduction
+
+The REST sample code Honor ID Service has been encapsulated and includes a rich sample program for your reference or direct use. Code2AtDemo code obtains AT, AtParserDemo parses AT, GetInfoDemo token method obtains user information, GetServerAtDemo obtains application-level token, IDTokenParserDemo parses id_token, Rt2AtDemo refreshes token.
+
+
+
+## Environment
 
 JDK version 1.8 and above.
 
-## hardware requirements
-
 Computers with Windows 10/Windows 7 operating system installed (desktop or laptop)
 
-## configuration
+
+
+## Configuration
 
 | parameter      | describe                                                     |
 | -------------- | ------------------------------------------------------------ |
-| client_id      | App ID, Need to [access the Honor Developer Service Platform](https://developer.hihonor.com/)To apply, you need to include the client in the example_ Replace the ID with your own application |
-| client_secret  | App SECRET, Need to[access the Honor Developer Service Platform](https://developer.hihonor.com/)To apply, you need to include the client in the example_ Replace the secret with your own application |
-| tokenUrl       | Obtain the request address for the access token, https://hnoauth-login.cloud.hihonor.com/oauth2/v3/token |
-| getInfoUrl     | Request address for obtaining user information,, https://account-drcn.platform.hihonorcloud.com/rest.php?nsp_fmt=JSON&nsp_svc=GOpen.User.getInfo |
-| parseTokenUrl  | Parsing the request address of the access token, https://hnoauth-login.cloud.hihonor.com/rest.php?nsp_fmt=JSON&nsp_svc=hihonor.oauth2.user.getTokenInfo |
-| CERT_URL       | Obtain the address of the public key for the solution ID Token, https://hnoauth-login.cloud.hihonor.com/oauth2/v3/certs |
+| client_id      | App ID, access the [HONOR Developers](https://developer.hihonor.com/) to apply, you need to replace the client id in the example with your own. |
+| client_secret  | App Secret, access the [HONOR Developers](https://developer.hihonor.com/) to apply, you need to replace the client id in the example with your own. |
+| tokenUrl       | The request address for obtaining the access token, https://hnoauth-login.cloud.hihonor.com/oauth2/v3/token |
+| getInfoUrl     | The request address for obtaining user information,, https://account-drcn.platform.hihonorcloud.com/rest.php?nsp_fmt=JSON&nsp_svc=GOpen.User.getInfo |
+| parseTokenUrl  | The request address for parsing the access token, https://hnoauth-login.cloud.hihonor.com/rest.php?nsp_svc=hihonor.oauth2.user.getTokenInfo |
+| CERT_URL       | The request address for obtaining the public key of parsing ID Token, https://hnoauth-login.cloud.hihonor.com/oauth2/v3/certs |
 | ID_TOKEN_ISSUE | The value of the ISS field in the ID Token, https://honorid.hihonor.com |
+
+
 
 ## Install
 
-Download demo, configure and download Maven, so you need a jar package that can be downloaded from the compiler Regular compilation startup
+Download the demo, configure and download the jar package required by maven, and can compile these demos normally.
+
+
 
 ## Sample code
 
-The Java sample code for the server side of Honor Account Service provides the following usage scenarios:
+The Java sample code for the server of Honor ID Service provides the following usage scenarios:
+
+1. In [GetServerAtDemo.java](./src/main/java/com/hihonor/honorid/demo/GetServerAtDemo.java) , obtain the application level Access Token，which is used for credentials in application-level interfaces.
+2. In [Code2AtDemo.java](./src/main/java/com/hihonor/honorid/demo/Code2AtDemo.java) , use Code to exchange for Access Token, obtain Access Token, and Refresh Token. 
+3. In [Rt2AtDemo.java](./src/main/java/com/hihonor/honorid/demo/Rt2AtDemo.java) , obtain new Access Token and new id_token by Refresh Token.
+4. In [AtParserDemo.java](./src/main/java/com/hihonor/honorid/demo/AtParserDemo.java) , parse Access Token and obtain open_id, scope, union_id, expire_in, client_id.
+5. In [IDTokenParserDemo.java](./src/main/java/com/hihonor/honorid/demo/IDTokenParserDemo.java) , verify ID Token locally and obtain union_id, given_name, display_name, picture, appid, email.
+6. In [GetInfoDemo.java](./src/main/java/com/hihonor/honorid/demo/GetInfoDemo.java), obtain open_id, avatar, nickname, email, mobile phone number,  country code by using Access Token.
 
 
-
-The Java sample code for the server side of Honor Account Service provides the following usage scenarios:
-
-1. In/oauth2/v3/token. Java, use Authorization Code to replace Access Token
-
-2. .IN/hihonor.oauth2.user.getTokenInfo.java,Parse Access Token
-
-3. In GOpen.User.getInfo.java, use Access Token to obtain user information
-
-4. In/oauth2/v3/token. Java, obtain the application level Access Token
-
-5. In/oauth2/v3/tokeninfo.java, resolve ID Token locally
-
-   6./oauth2/v3/token. Java, use Refresh Token to refresh Access Token
-
-## Running results
-
-Success:
-
-1. Obtain Access Token, Refresh Token,return parameters access_token,exprires_in,id_token,refresh_token,scope,token_type. [detailed information](https://developer.hihonor.com/cn/kitdoc?category=基础服务&kitId=11001&navigation=ref&docId=web-code2at.md&token=)
-
-2. Interface parsing Access Token,it can be concluded that open_id, scope , union_id, expire_in, client_id .[detailed information](https://developer.hihonor.com/cn/kitdoc?category=基础服务&kitId=11001&navigation=ref&docId=web-parse-at.md&token=)
-
-3. Return parameters openID,displayName,headPictureURL.[detailed information](https://developer.hihonor.com/cn/kitdoc?category=基础服务&kitId=11001&navigation=ref&docId=web-get-userinfo.md&token=)
-
-4. Return parameters access_token,expires_in,token_type.[detailed information](https://developer.hihonor.com/cn/kitdoc?category=基础服务&kitId=11001&navigation=ref&docId=web-get-server-at.md&token=)
-
-5. Response results and ID_ Does the scope of the token include openid, email, and profile .[detailed information](https://developer.hihonor.com/cn/kitdoc?category=基础服务&kitId=11001&navigation=ref&docId=web-parse-idtoken.md&token=)
-
-6. Obtain new Access Token，return parameters access_token,expires_in,id_token,refresh_token,scope,token_type.[detailed information](https://developer.hihonor.com/cn/kitdoc?category=基础服务&kitId=11001&navigation=ref&docId=web-rt2at.md&token=)
-
-Failure error code:
-
-1.1101；
-
-2.102；
-
-3.1101；
-
-4.1101；
-
-5.1500；
-
-6.1101；
 
 ## Technical support
 
-If you have any information about the sample code, you can find it in the [Honor Developer Community](https://developer.hihonor.com/cn/forum/?navation=dh11614886576872095748%2F1 )Get the latest information about the account REST sample code and exchange insights with other developers.
+You can get the latest information about the Honor ID REST sample code in the  [HONOR Developers Community](https://developer.hihonor.com/cn/forum/?navation=dh11614886576872095748%2F1) and exchange insights with other developers.
 
-If you have any questions about using this sample code, please go to the Honor Developer Community for more opinions and suggestions. If there is an error while running the sample code, please submit an issue or pull request to GitHub
+If you have questions about using this sample code, please go to the [HONOR Developers Community](https://developer.hihonor.com/cn/forum/?navation=dh11614886576872095748%2F1)  for more opinions and suggestions.
 
-## Authorization License
 
-The Honor Account Service sample code has been licensed by [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+
+## License
+
+The Honor ID Service sample code has been licensed by [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 

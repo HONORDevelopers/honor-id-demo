@@ -1,4 +1,8 @@
-# 荣耀帐号安卓端Java示例代码
+# 荣耀账号安卓端Java示例代码
+
+[![Apache-2.0](https://img.shields.io/badge/license-Apache-blue)](http://www.apache.org/licenses/LICENSE-2.0)
+[![Open Source Love](https://img.shields.io/static/v1?label=Open%20Source&message=%E2%9D%A4%EF%B8%8F&color=green)](https://developer.hihonor.com/demos/)
+[![Java Language](https://img.shields.io/badge/language-java-green.svg)](https://www.java.com/en/)
 
 中文 | [English](README.md) 
 
@@ -16,7 +20,7 @@
 
 ## 简介
 
-荣耀帐号安卓端Java示例代码对荣耀帐号服务(HonorID) 的客户端接口进行封装而提供的示例。实现了：静默登录, 授权登录, 取消授权, 增量授权功能。
+荣耀账号安卓端Java示例代码对荣耀账号服务(HonorID) 的客户端接口进行封装而提供的示例，实现了：静默登录, 授权登录, 取消授权, 增量授权功能。具体也可以参考：[集成HonorID OpenSDK](https://developer.hihonor.com/cn/kitdoc?category=%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1&kitId=11001&navigation=guides&docId=android-intergrate-sdk.md&token=)。
 
 
 
@@ -30,14 +34,14 @@
   - compileSdkVersion 31（推荐）
   - Gradle 5.4.1及以上（推荐）
 - 测试应用的设备：MagicUI 4.0及以上的荣耀手机。
-- 荣耀帐号APK 6.0.2.300及以上
+- 荣耀账号APK 6.0.2.300及以上
 
 
 
 ## 开发准备
 
-1. 在Android Studio中打开示例代码工程，并在您已安装最新版荣耀帐号APP的设备或模拟器上运行测试应用。
-2. 注册[荣耀开发者帐号](https://developer.hihonor.com/cn/)。
+1. 在Android Studio中打开示例代码工程，并在您已安装最新版荣耀账号APP的设备或模拟器上运行测试应用。
+2. 注册[荣耀开发者账号](https://developer.hihonor.com/cn/)。
 3. 创建安卓应用。具体请参考[开发准备|申请安卓应用](https://developer.hihonor.com/cn/kitdoc?category=base&kitId=11001&navigation=guides&docId=android-apply-application.md)。
 4. 构建此示例demo前，请先将demo导入Android Studio（3.6.1及以上版本）。
 5. 配置示例代码：
@@ -68,4 +72,4 @@
 
 
 ## 授权许可
-荣耀帐号服务Android示例代码经过[Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)授权许可。
+荣耀账号服务Android示例代码经过[Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)授权许可。
