@@ -32,9 +32,6 @@ import java.util.List;
 
 /**
  * This is a demo for get access token by refresh token.
- *
- * @author l00017689
- * @since 2022-08-30
  */
 public class Rt2AtDemo {
 
@@ -53,7 +50,7 @@ public class Rt2AtDemo {
         // Because the request body used in this example is UrlEncodedFormEntity,
         // the request parameters will be automatically urlencoded,
         // so the parameters do not need to be urlencoded separately;
-        String refreshToken = "CgB6e3x9jobYuEj0SyIyqXK5QbCM/uu44F1kA9eZCB2BRrEYlokRYVHnKcMq/D2lZIdRnvnP7p26+RdVuwJknOswkor";
+        String refreshToken = "CgB6e3x9jobYuEj0SyXK5QbCM/uu44F1kA9eZCB2BRrEYlokRYVHnKcMq/D2lZIdRnvnP7p26+RdVuwJknwkor";
 
         // You need to decode it first, if the refreshToken parameter is urlencoded.
         // refreshToken = java.net.URLDecoder.decode(refreshToken,   "utf-8");

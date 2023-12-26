@@ -31,9 +31,6 @@ import java.util.List;
 
 /**
  * This is a demo for parse access token.
- *
- * @author l00017689
- * @since 2022-08-30
  */
 public class AtParserDemo {
 
@@ -47,7 +44,7 @@ public class AtParserDemo {
         // Because the request body used in this example is UrlEncodedFormEntity,
         // the request parameters will be automatically urlencoded,
         // so the parameters do not need to be urlencoded separately;
-        String accessToken = "CgB6e3x9LNBGr/LuJ77Inhv5sTfde0L4ZQPLn3ijp/3JA2gMM+sy5Z+u+JtZU6ZYVP4t6wjep8QnOgoEyL0eFj756WmWakI";
+        String accessToken = "CgB6e3x9LNBGr/LuJ77Infde0L4ZQPLn3ijp/3JA2gMM+sy5Z+u+JtZU6ZYVP4t6wjep8QnOgoEyL056WmWakI";
 
         // You need to decode it first, if the accessToken parameter is urlencoded.
         // accessToken = java.net.URLDecoder.decode(accessToken, "utf-8");
