@@ -28,9 +28,6 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
 /**
  * custom httpclient
- *
- *  @author l00017689
- *  @since 2022-08-30
  */
 public class HttpClientUtil {
 

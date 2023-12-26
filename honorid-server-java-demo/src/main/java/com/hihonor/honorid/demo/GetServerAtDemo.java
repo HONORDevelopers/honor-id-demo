@@ -32,9 +32,6 @@ import java.util.List;
 
 /**
  * This is a demo for get server access token.
- *
- * @author l00017689
- * @since 2022-08-30
  */
 public class GetServerAtDemo {
 

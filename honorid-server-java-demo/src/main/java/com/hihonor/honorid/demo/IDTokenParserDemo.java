@@ -59,9 +59,6 @@ import com.auth0.jwt.interfaces.DecodedJWT;
  * You'd better learn more about the JWT and JWK for understanding this demo
  * See more about JWT in https://jwt.io/
  * See more about JWK in http://self-issued.info/docs/draft-ietf-jose-json-web-key.html
- *
- * @author l00017689
- * @since 2022-03-20
  */
 public class IDTokenParserDemo {
 
@@ -90,7 +87,7 @@ public class IDTokenParserDemo {
     // Main method
     public static void main(String args[]) throws InvalidPublicKeyException {
         // Please replace this idToken with yours
-        String idToken = "eyJraWQiOiI5OGMDNjNWU5MmRlMzg0MDU5Y2QxIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOLCJhdWQpIjoiN2mJhLTgyFhIn0.DCTfmwp2oaiyTXXQ4B9elTNB7w8ClgmINwQszNdSKVQXKcwtJNxtnzcRuieI8yGlhMt9ZagyMaKI9g1Pt6x4NbEAWioGFgk7N6jJI_2I1i--15CjPfuiQ50djCtrzTEBA5562lYTLMd8Wg1CFFERqpInXFhr69afKVFO81Evoz9DgWbOq4GLT0WPdhi843VP78x2l2TZynGduZJQBdxXmt9DkHUu21asDhAtzxqm9PqlKJfFb4HgZ92NCCHoDXfs7AvK566tA3jLzw18mp9PuImnqiLqzcYa0Fzk5Ynljr1IQ";
+        String idToken = "eyJraWQiOiI5OGMDNjNWU5MmRlMzg0MDU5Y2QidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOLCJhdWQpIjoiN2mJhLTgyFhIn0.DCTfmwp2oaiyTXXQ4B9elTNB7w8ClgmINwQszNdSKVQXKcwtJNxtnzcRuieI8yGlhMt9ZagyMaKI9g1Pt6x4NbEAWioGFgk7N6jJI_2I1i--15CjPfuiQ50djCtrzTEBA5562lYTLMd8Wg1CFFERqpInXFhr69afKVFO81Evoz9DgWbOq4GLT0WPdhi843VP78x2l2TZynGduZJQBdxXmt9DkHUu21asDhAtzxqm9PqlKJfFb4HgZ92NCC7AvK566tA3jLzw18mp9PuImnqiLqzcYa0Fzk5Ynljr1IQ";
         IDTokenParserDemo idTokenParser = new IDTokenParserDemo();
         System.out.println(idTokenParser.verify(idToken));
     }

@@ -31,9 +31,6 @@ import java.util.List;
 
 /**
  * This is a demo for get access token by code.
- *
- * @author l00017689
- * @since 2022-08-30
  */
 public class Code2AtDemo {
 
@@ -57,7 +54,7 @@ public class Code2AtDemo {
         // Because the request body used in this example is UrlEncodedFormEntity,
         // the request parameters will be automatically urlencoded,
         // so the parameters do not need to be urlencoded separately;
-        String code = "DQB6e3x9QgbS52eU4aDuv3K/yibNrsFRM0cIPxZjszuV/RvJVXLnRJZ/7TBi6IaNDX5w/lKusvn93sJ3tb4E1zo47jNDZoFyFfj30D6VPk5B3ivl0ZbT1G67Da+74HIiZsKGKfAoZotgcX5Rszy9GIOv1dltKpZahBVSJavAypYBA5UtggCyf4Hbfl";
+        String code = "DQB6e3x9QgbS52eU4aDuv3K/yibNrsFRM0cIPxZjszuV/RvJVXLnRJZ/7TBi6IaNDX5w/lKusvn93sJ3tb4E1zo47jNDZoFyFfj30D6VPk5B3ivl0ZbT1G67Da+74HIiZsKGKfAoZotgcX5Rszy9GIOv1dltKpZahBVSJaUtggCyf4Hbfl";
 
         // You need to decode it first, if the code parameter is urlencoded.
         // code = java.net.URLDecoder.decode(code, "utf-8");
